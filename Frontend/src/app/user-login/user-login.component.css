@@ -1,0 +1,59 @@
+body{
+    font-family: sans-serif;
+}
+.row{
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: justify;
+    margin-left: -8%;
+}
+.image img{
+    height : 500px;
+    background-color: black;
+}
+@media screen and (max-width:768px){
+    .image{
+        display: none;
+    }
+}
+.profile{
+    text-align: center;
+}
+.profile img{
+    width: 90px;
+    height: 90px;
+    box-shadow: 2px 2px  gray;
+    border-radius: 50%;
+}
+.form{
+    text-align: center;
+    font-size: 25px;
+    position: relative;
+}
+i{
+    font-size: 30px;
+    color: #00BFA6;
+}
+.form-control{
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+.form-control:focus{
+    padding: 5px;
+}
+.forgot{
+    font-size: 10px;
+    text-align: center;
+    width: 50%;
+    float: right;
+}
+.forgot a{
+    color : black;
+}
+.button{
+    clear: both;
+}
+.container{
+    margin-top: 3%;
+}

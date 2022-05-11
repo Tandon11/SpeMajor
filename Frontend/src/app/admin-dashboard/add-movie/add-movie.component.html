@@ -1,0 +1,58 @@
+<div class="row mt-3  justify-content-center">
+    <div class="col-md-11 card" >
+        <div class="row " style="background: #cc3d00 radial-gradient(circle at 60% 100%,#ffa436 5%,#cc3d00 94%);color: black;margin: 10px;padding: 10px;">
+            <div class="col-md-12 d-flex justify-content-center" >
+                <h2>Add Movie</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="row mt-2">
+            <div class="col-md-12">
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <form name="form" [formGroup] = "form" (ngSubmit) = "form.valid && onSubmit()" class="card m-2">
+
+                            <div class="col-md-12">
+                                <div class="m-1">
+                                    <input class="input form-control" formControlName="movieName" [ngClass]="{ 'is-invalid':form.get('movieName')?.touched && form.get('movieName')?.invalid}" name="movie_name" type="text" placeholder="Movie Name"  autocomplete="off" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 ">
+                                <div class="m-1">
+                                    <input class="input form-control" formControlName="genre" [ngClass]="{ 'is-invalid':form.get('genre')?.touched && form.get('genre')?.invalid}" name="genre" type="text" placeholder="Movie Genre" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 ">
+                                <div class="m-1">
+                                    <input class="input form-control" formControlName="summary" [ngClass]="{ 'is-invalid':form.get('summary')?.touched && form.get('summary')?.invalid}" name="summary" type="text" placeholder="About the Movie and Cast" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 ">
+                                <div class="m-1">
+                                    <input class="input form-control" formControlName="review" [ngClass]="{ 'is-invalid':form.get('review')?.touched && form.get('review')?.invalid}" name="review" type="text" placeholder="Movie review" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 ">
+                                <div class="m-1">
+                                    <input class="input form-control" formControlName="image" [ngClass]="{ 'is-invalid':form.get('image')?.touched && form.get('image')?.invalid}" name="image" type="text" placeholder="Paste the Poster Image URL" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mt-2 mb-5 ">
+                                <div class="m-1 mt-4">
+                                    <button class="button" type="submit" [disabled]="!form.valid">Add</button>
+                                </div>
+                            </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

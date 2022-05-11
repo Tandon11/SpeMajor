@@ -1,0 +1,90 @@
+<div class="row mt-3  justify-content-center">
+    <div class="col-md-11 card" >
+        <div class="row " style="background: #cc3d00 radial-gradient(circle at 60% 100%,#ffa436 5%,#cc3d00 94%);color: black;margin: 10px;padding: 10px;">
+            <div class="col-md-12 d-flex justify-content-center" >
+                <h2>Add Seats</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="row mt-2">
+            <div class="col-md-12">
+                <div class="row mb-3">
+                    <div class="col-md-12">
+                        <form name="form" [formGroup] = "form" (ngSubmit) = "form.valid && onSubmit()" class="card m-2">
+
+                            <div class="col-md-12">
+                                <div class="m-1">
+                                    <div class="form-group">
+                                        <label ><h3 class="font-weight-bold m-0">Select Movie:</h3></label>
+                                        <select class="form-control" formControlName="movieId" [ngClass]="{ 'is-invalid':form.get('movieId')?.touched && form.get('movieId')?.invalid}" name="movieId" (click) = "setMovid($event)">
+                                            <option *ngFor='let movie of movies' value="{{movie.movieId}}">{{movie.movieId}}. {{movie.movieName}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="m-1">
+                                    <div class="form-group">
+                                        <label ><h3 class="font-weight-bold m-0">Select Location:</h3></label>
+                                        <select class="form-control" formControlName="locationId" [ngClass]="{ 'is-invalid':form.get('locationId')?.touched && form.get('locationId')?.invalid}" name="locationId" (click) = "setLocid($event)">
+                                            <option *ngFor='let location of locations' value="{{location.location_id}}">{{location.location_id}}. {{location.location_name}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="m-1">
+                                    <div class="form-group">
+                                        <label ><h3 class="font-weight-bold m-0">Select Theatre:</h3></label>
+                                        <select class="form-control" formControlName="theatreId" [ngClass]="{ 'is-invalid':form.get('theatreId')?.touched && form.get('theatreId')?.invalid}" name="theatreId"  (click) = "getTheatreByLocidAndMovid($event)">
+                                            <option *ngFor='let theatre of theatres' value="{{theatre.theatreId}}">{{theatre.theatreId}}. {{theatre.theatreName}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="m-1">
+                                    <div class="form-group">
+                                        <label ><h3 class="font-weight-bold m-0">Select Show:</h3></label>
+                                        <select class="form-control" formControlName="showid" [ngClass]="{ 'is-invalid':form.get('showid')?.touched && form.get('showid')?.invalid}" name="showid" (click) = "getShowById()">
+                                            <option *ngFor='let show of shows' value="{{show.showid}}">{{show.showid}}. {{show.showTime}}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="m-1">
+                                    <div class="form-group">
+                                        <label ><h3 class="font-weight-bold m-0">Select Seat Type:</h3></label>
+                                        <select class="form-control" formControlName="seat_type" [ngClass]="{ 'is-invalid':form.get('seat_type')?.touched && form.get('seat_type')?.invalid}" name="seat_type">
+                                            <option value = "Gold">Gold</option>
+                                            <option value = "Silver">Silver</option>
+                                            <option value = "Platinum">Platinum</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 ">
+                                <div class="m-1">
+                                    <input class="input form-control" formControlName="cost" [ngClass]="{ 'is-invalid':form.get('cost')?.touched && form.get('cost')?.invalid}" name="theatreName" type="text" placeholder="Seat Cost" required>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mt-2 mb-2 ">
+                                <div class="m-1 mt-4">
+                                    <button class="button" type="submit">Add</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row h-100">
+        <div class="row d-flex  align-items-center">
+
+            <div class="col-md-6 my-auto image">
+                <img src="https://image.freepik.com/free-vector/cute-boy-standing-position-showing-thumb_96037-450.jpg" alt="Boy on Computer">
+            </div>
+
+            <div class="col-md-6 my-auto">
+                <div class = "container">
+                    <h1 style="text-align: center; font-weight: bold;">Welcome</h1>
+                    <div class="form">
+
+                        <form name="form" [formGroup] = "form" (ngSubmit) = "form.valid && onSubmit()">
+                            <div class="form-group user">
+                                <!--<i class="fas fa-user"></i>-->
+                                <div class="m-1">
+                                    <input class="input form-control" formControlName="email" [ngClass]="{ 'is-invalid':form.get('email')?.touched && form.get('email')?.invalid}" name="email" type="email" placeholder="Email" autocomplete="off" required>
+                                    <div class="invalid-feedback">
+                                        <div *ngIf="form.get('email')?.hasError('required')">
+                                            This Field is required!!
+                                        </div>
+                                        <div *ngIf="form.get('email')?.hasError('email')">
+                                            Enter Valid Email Address!!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group pass">
+                                <div class="m-1">
+                                    <input class="input form-control"  formControlName="password" [ngClass]="{ 'is-invalid':form.get('password')?.touched && form.get('password')?.invalid }" type = "password" placeholder = "Password" required>
+                                </div>
+                            </div>
+
+                            <div class="button">
+                                <button  type="submit" class="btn btn-outline-success"  onsubmit ="form.valid">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

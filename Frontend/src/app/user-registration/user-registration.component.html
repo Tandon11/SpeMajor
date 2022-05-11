@@ -1,0 +1,84 @@
+<app-header></app-header>
+<div class="container">
+    <div class="row h-100">
+        <div class="row d-flex  align-items-center">
+
+            <div class="col-md-6 my-auto image">
+                <img src="https://image.freepik.com/free-vector/cute-boy-standing-position-showing-thumb_96037-450.jpg" alt="Boy on Computer">
+            </div>
+
+            <div class="col-md-6 my-auto">
+                <div class = "container">
+
+                    <h1 style="text-align: center; font-weight: bold;">Welcome</h1>
+                    <div class="form">
+
+                        <form name="form" [formGroup] = "form" (ngSubmit) = "form.valid && onSubmit()">
+
+                            <div class="form-group user">
+                                <div class="m-1">
+                                    <input class="input form-control" formControlName="email" [ngClass]="{ 'is-invalid':form.get('email')?.touched && form.get('email')?.invalid}" autocomplete="off" type="email" placeholder="Email" required>
+                                    <div class="invalid-feedback">
+                                        <div *ngIf="form.get('email')?.hasError('required')">
+                                            This Field is required!!
+                                        </div>
+                                        <div *ngIf="form.get('email')?.hasError('email')">
+                                            Enter Valid Email Address!!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Full Name-->
+                            <div class="form-group user">
+                                <!--<i class="fas fa-user"></i>-->
+                                <div class="m-1">
+                                    <input class="input form-control" formControlName="fullname" [ngClass]="{ 'is-invalid':form.get('fullname')?.touched && form.get('fullname')?.invalid}" type="text" placeholder="Full Name">
+                                </div>
+                            </div>
+
+                            <!-- Mob num-->
+
+                            <div class="form-group user">
+                                <!--<i class="fas fa-user"></i>-->
+                                <div class="m-1">
+                                    <input class="input form-control" formControlName="contactno" [ngClass]="{ 'is-invalid':form.get('contactno')?.touched && form.get('contactno')?.invalid}" type="text" placeholder="Mobile Number">
+                                </div>
+                            </div>
+
+                            <!--password -->
+
+                            <div class="form-group pass">
+                                <div class="m-1">
+                                    <input class="input form-control" formControlName="password" [ngClass]="{ 'is-invalid':form.get('password')?.touched && form.get('password')?.invalid }" type="password" placeholder="Password">
+                                </div>
+                            </div>
+
+                            <div class="form-group pass">
+                                <div class="m-1">
+                                    <input class="input form-control" type="Password" formControlName="confPassword" [ngClass]="{ 'is-invalid':form.get('confPassword')?.touched && form.get('confPassword')?.invalid }" formControlName="confPassword" placeholder="Confirm Password">
+                                    <div class="invalid-feedback">
+                                        <div *ngIf="form.get('confPassword')?.hasError('required')">
+                                            This Field is required!!
+                                        </div>
+                                        <div *ngIf="form.get('confPassword')?.hasError('isError')">
+                                            Password does not match!!
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12 mt-2 mb-5 d-flex flex-row justify-content-center">
+                                <div class="m-1 mt-4">
+                                    <button  type="reset" class="btn btn-outline-secondary">Reset</button>
+                                    <button  type="submit" class="btn btn-outline-success"  [disabled]="!form.valid" >Sign Up</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

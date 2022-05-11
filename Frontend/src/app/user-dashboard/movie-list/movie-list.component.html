@@ -1,0 +1,63 @@
+<div class="row mt-3  justify-content-center">
+    <div class="col-md-11 card" >
+        <div class="row " style="background: #cc3d00 radial-gradient(circle at 60% 100%,#ffa436 5%,#cc3d00 94%);color: Black;margin: 10px;padding: 10px;">
+            <div class="col-md-12 d-flex justify-content-center" >
+                <h2>Movies</h2>
+            </div>
+        </div>
+        <hr>
+        <div class="row mt-2">
+            <div class="col-md-12">
+                <div class="row mb-3">
+                    <div class="col-md-12 overflow-auto" style="height: 35rem;">
+                        <div>
+                            <div *ngFor='let movie of movies' class="card">
+                                <div class="card-header flex-row heading" >
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <h2><b>{{movie.movieName}}</b></h2>
+                                        </div>
+                                        <div class="col-auto">
+                                            <button class="button" type="button" routerLink="/dashboard/movieBooking/{{movie.movieId}}">
+                                                Book Now
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-7 mr-auto">
+                                                <h4><b> Genre :</b></h4> <p>{{movie.genre}}</p>
+                                                <hr>
+                                                <h4><b> About : </b></h4> <p>{{movie.summary}}</p>
+                                                <hr>
+                                                <h4><b> Review : </b></h4> <p>{{movie.review}}</p>
+                                                <div class="col-md-7 mr-auto">
+                                                </div>
+                                            </div>
+<!--                                            <div class="col-auto mr-auto">-->
+<!--                                                <br><h4><b> Seatings :  </b></h4>-->
+<!--                                                <div *ngFor='let seat of seats'>-->
+<!--                                                    <p>{{seat.seat_type}} : Rs {{seat.cost}}</p>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                            <br>-->
+                                            <div class="col-auto">
+                                                <div class="col-auto">
+                                                    <img src="{{movie.image}}" width="180px" height="270px"alt="error">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
